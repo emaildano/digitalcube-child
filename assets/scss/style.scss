@@ -1,0 +1,167 @@
+/*!
+Theme Name:    DigitalCube
+Author:        DigitalCube
+Author URI:    https://digitalcube.jp
+Description:   WordPress Child Theme for DigitalCube
+Version:       1.0.0
+License:       GNU General Public License v3 or later
+License URI:   https://www.gnu.org/licenses/gpl-3.0.html
+Template:      page-builder-framework
+Text Domain:   page-builder-framework-child
+*/
+
+// Hotfix
+// todo: Add this to dc-pattern-lib
+$enable-deprecation-messages: true !default;
+// Hotfix
+
+/* ========================================================================
+DC Pattern Lib Vars
+========================================================================== */
+
+@import "../../node_modules/dc-pattern-lib/lib/assets/variables";
+@import "../../node_modules/bootstrap/scss/_mixins";
+@import "../../node_modules/dc-pattern-lib/lib/assets/buttons";
+@import "../../node_modules/bootstrap/scss/utilities/_shadows";
+@import "../../node_modules/bootstrap/scss/utilities/_text";
+@import "../../node_modules/bootstrap/scss/utilities/_borders";
+@import "../../node_modules/bootstrap/scss/utilities/_overflow";
+@import "../../node_modules/bootstrap/scss/_type";
+
+/* ========================================================================
+Font Imports
+========================================================================== */
+
+@import url("https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Source+Code+Pro:200,300,400,500,600,700,900");
+
+/* ========================================================================
+Page Builder Framework Config
+page-builder-framework/assets/scss/config/_config.scss
+========================================================================== */
+
+// Fonts
+$base-font: "Montserrat";
+$head-font: $base-font;
+
+// Font Weights
+$light: 200;
+$base-fontweight: 300;
+$semibold: 500;
+$bold: 700;
+
+/* ========================================================================
+Page Builder Framework Main
+page-builder-framework/assets/scss/style.scss
+========================================================================== */
+
+@import "../../../page-builder-framework/assets/scss/style";
+
+/* ========================================================================
+Typography
+page-builder-framework/assets/scss/base/_typography.scss
+========================================================================== */
+
+// Body
+body {
+  font-family: $base-font;
+  color: $brand-color-alt;
+  font-size: $base-fontsize;
+  line-height: $base-lineheight;
+  font-weight: $font-weight-base;
+}
+
+// Forms
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: $base-font;
+  font-size: $base-fontsize;
+}
+
+textarea {
+  line-height: $base-lineheight;
+}
+
+// Headlines
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $headings-color;
+  font-family: $headings-font-family;
+  margin: 0 0 $headings-margin-bottom 0;
+  font-weight: $headings-font-weight;
+  line-height: $headings-line-height;
+}
+
+h1 {
+  font-size: $h1-font-size;
+}
+
+h2 {
+  font-size: $h2-font-size;
+}
+
+h3 {
+  font-size: $h3-font-size;
+}
+
+h4 {
+  font-size: $h4-font-size;
+}
+
+h5 {
+  font-size: $h5-font-size;
+}
+
+h6 {
+  font-size: $h6-font-size;
+}
+
+/* ========================================================================
+Elementor Styles
+========================================================================== */
+
+// Buttons
+
+.elementor-element {
+  .elementor-button-gradient .elementor-button {
+    background: $magenta linear-gradient(to right, $magenta, $purple);
+  }
+
+  .elementor-button-blue .elementor-button {
+    background-color: $blue;
+  }
+
+  .elementor-button-link .elementor-button {
+    @extend .btn-link;
+  }
+}
+
+.elementor-button {
+  &.elementor-size-xs,
+  &.elementor-size-sm,
+  &.elementor-size-md {
+    border-radius: $btn-border-radius;
+  }
+}
+
+// Headings
+
+.elementor-widget-heading {
+  .elementor-heading-title {
+    line-height: $headings-line-height;
+  }
+}
+
+// Counter
+
+.elementor-counter {
+  .elementor-counter-number-wrapper {
+    font-weight: $font-weight-base;
+  }
+}
