@@ -40,6 +40,8 @@ page-builder-framework/assets/scss/config/_config.scss
 ========================================================================== */
 
 // Fonts
+$brand-color: $black;
+$accent-color: $brand-color;
 $base-font: "Montserrat";
 $head-font: $base-font;
 
@@ -91,7 +93,6 @@ h3,
 h4,
 h5,
 h6 {
-  color: $headings-color;
   font-family: $headings-font-family;
   margin: 0 0 $headings-margin-bottom 0;
   font-weight: $headings-font-weight;
@@ -127,8 +128,15 @@ Elementor Styles
 ========================================================================== */
 
 // Buttons
+.elementor-button {
+  background-color: $brand-color;
+}
 
 .elementor-element {
+  .elementor-button-black .elementor-button {
+    background-color: $black;
+  }
+
   .elementor-button-gradient .elementor-button {
     background: $magenta linear-gradient(to right, $magenta, $purple);
   }
@@ -163,5 +171,21 @@ Elementor Styles
 .elementor-counter {
   .elementor-counter-number-wrapper {
     font-weight: $font-weight-base;
+  }
+}
+
+// Pagination
+.elementor-pagination {
+  a {
+    @extend .btn;
+  }
+}
+
+.elementor-pagination {
+  margin-top: 6em;
+
+  .page-numbers {
+    @extend .btn;
+    padding: $btn-padding-y $btn-padding-x;
   }
 }
